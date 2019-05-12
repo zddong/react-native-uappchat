@@ -1,6 +1,24 @@
 
-import { NativeModules } from 'react-native';
+import {
+    NativeModules,
+    Platform,
+    DeviceEventEmitter
+} from 'react-native';
 
-const { RNAppInfo } = NativeModules;
+const ChatModule = NativeModules.JGIMModule;
 
-export default RNAppInfo;
+
+export default class UappChat {
+
+    static PushChat() {
+        // exec(null, null, PLUGIN_NAME, 'setDebugMode', [params])
+        ChatModule.PushChat()
+
+    }
+
+
+}
+
+
+
+
